@@ -1,0 +1,419 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>任务六：通过HTML及CSS模拟报纸排版</title>
+	<style type="text/css">
+	/*----reset----*/
+		body, div, header, p, span, ul, li, img, section, h1, h2, h3, footer {
+			margin: 0;
+			padding: 0;
+		}
+		.clearfix {
+			overflow: auto;
+			zoom: 1;
+		}
+		body {
+			background: #f3f3f3;
+		}
+		.paper {
+			width: 980px;
+			height: 1386px;
+			background: #ffffff;
+			position: absolute;
+			margin: 0 auto;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+		.view {
+			width: 892px;
+			height: auto;
+			margin: 0 auto;
+		}
+	/*----header----*/
+		.header {
+			width: 892px;
+			height: 61px;
+			margin: 0 auto;
+			border-bottom: 2px solid #938e8c;
+		}
+		.logo {
+			float: left;
+			width: 110px;
+			height: 61px;
+			background: #F08080;
+		}
+		.logo p {
+			padding: 45px 10px 0 10px;
+			font-size: 12px;
+			color: #ffffff;
+			font-family: 'Heiti SC';
+		}
+		.date {
+			float: right;
+			width: 110px;
+			height: 61px;
+		}
+		.date p {
+			float: right;
+			padding: 45px 10px 0 10px;
+			font-size: 12px;
+			color: #d45d5c;
+			font-family: 'Heiti SC';
+		}
+	/*----upperPart----*/
+		.upperPart {
+			position: relative;
+			width: auto;
+			height: 360px;
+			margin-top: 34px;
+		}
+		.pic {
+			float: left;
+			width: 601px;
+			height: 301px;
+			background: #c5c5c5;
+		}
+		.pic img {
+			display: block;
+			max-width: 601px;
+			max-height: 301px;
+		}
+		.maskLayer {
+			position: absolute;
+			width: 191px;
+			height: 301px;
+			filter:alpha(Opacity=50);
+			-moz-opacity:0.5;
+			opacity: 0.5;
+		}
+		.box1 {
+			background: #7FFFD4;
+		}
+		.box2 {
+			left: 410px;
+			background: #FF69B4;
+		}
+		.textpart {
+			float: right;
+			width: 210px;
+			height: 301px;
+			border-top: 2px solid #CC8091;
+		}
+		.textpart h2 {
+			font-size: 24px;
+			color: #000000;
+			font-family: 'Microsoft YaHei';
+		}
+		.textpart p {
+			font-size: 16px;
+			color: #676767;
+			font-family: 'KaiTi';
+		}
+		.textpart ul{
+			margin-top: 20px;
+			list-style: none;
+		}
+		.textpart ul li {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+	/*----middlePart----*/
+		.middlePart {
+			width: auto;
+			height: 210px;
+		}
+		.box {
+			float: left;
+			width: 237px;
+			height: auto;
+			margin: 0 20px 0 0;
+		}
+		.box ul {
+			list-style: none;
+			margin-top: 20px;
+		}
+		.box ul li {
+			padding: 5px 0;
+		}
+		.porsche h3 {
+			font-size: 30px;
+			color: #7FFFD4;
+		}
+		.ferrari h3 {
+			font-size: 28px;
+			color: #DC143C;
+		}
+		.mclaren h3 {
+			font-size: 30px;
+			color: #2F4F4F;
+		}
+	/*----lowerPart----*/
+		.lowerPart {
+			width: auto;
+			height: 690px;
+		}
+		.lowerLeftPart {
+			float: left;
+			width: 436px;
+			height: auto;
+			padding: 0 10px 0 0;
+		}
+		.lowerLeftPart h2 {
+			font-size: 40px;
+			color: #11456b;
+			font-style: italic;
+			font-family: 'Heiti SC';
+			word-spacing: 8px;
+		}
+		.lowerLeftPart h2 span {
+			font-size: 72px;
+			color: #f5e327;
+			font-style: italic;
+			font-family: 'Heiti SC';
+		}
+		.lowerLeftPart h3 {
+			font-size: 33px;
+			color: #11456b;
+			font-style: bold;
+			font-family: 'Heiti SC';
+			border-bottom: 2px solid #11456b;
+			margin-bottom: 10px;
+
+		}
+		.firstfont { 
+			float: left;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			line-height: 70px;
+			font-size:70px;
+			color:#f5e327;
+			font-family: 'Microsoft YaHei';
+		}
+		.lowerLeftPart p {
+			font-size: 12px;
+			color: #767777;
+			font-style: bold;
+			text-indent: 2em;
+			font-family: 'SimSun';
+		}
+		.lowerLeftPart img {
+			float: right;
+			width: 150px;
+			height: 300px;
+		}
+		.lowerRightPart {
+			float: left;
+			width: 436px;
+			height: auto;
+			padding: 0 0 0 10px;
+		}
+		.lowerRightPart img {
+			display: block;
+			width: 436px;
+			height: 275px;
+		}
+		.intd {
+			position: absolute;
+			width: 436px;
+			height: 61px;
+			margin-top: 211px;
+			background: #000;
+			filter:alpha(Opacity=80);
+			-moz-opacity:0.8;
+			opacity: 0.8;
+		}
+		.shu {
+			float: left;
+			width: 3px;
+			height: 44px;
+			margin: 0 10px 0 50px;
+			background: #72b16a;
+		}
+		.lap {
+			float: left;
+			font-size: 26px;
+			color: #ffffff;
+			font-family: 'Microsoft YaHei';
+		}
+		.exl {
+			float: left;
+			margin: 20px 0 0 10px;
+			font-size: 12px;
+			color: #72b16a;
+			font-style: italic;
+			letter-spacing: 140%;
+			font-family: 'Microsoft YaHei';
+		}
+		.lowerRightPart ul {
+			list-style: none;
+			margin-top: 20px;
+		}
+		.lowerRightPart ul li {
+			padding: 10px 0;
+		}
+		.triangle {
+			border: 5px solid #ffffff;
+			border-bottom: 7px solid #000000;
+			float: left;
+			overflow: hidden;
+			width: 0;
+			height: 0;
+			margin: 5px 10px 0 5px; 
+		}
+		.copyright {
+			float: right;
+			margin-top: 100px;
+			width: 260px;
+			height: 160px;
+			background: #F08080;
+		}
+		.sum {
+			float: left;
+			font-size: 110px;
+			color: #ffffff;
+			font-family: 'Microsoft YaHei';
+		}
+		.shu1 {
+			float: left;
+			margin: 30px;
+			width: 2px;
+			height: 100px;
+			background: #ffffff;
+		}
+		.author {
+			float: left;
+			margin-top: 90px;
+			font-size: 21px;
+			color: #ffffff;
+			font-family: 'Heiti SC'
+		}
+	/*----footer----*/
+		.footer {
+			width: 892px;
+			border-top: 1px solid #938e8c;
+		}
+		.footer span {
+			float: right;
+			font-size: 12px;
+			color: #d45d5c;
+			font-family: 'Heiti SC'
+		}
+	</style>
+</head>
+<body>
+<div class="paper clearfix">
+	<div class="view clearfix">
+		<header class="header clearfix">
+			<div class="logo clearfix"><p>The Grand Tour</p></div>
+			<div class="date clearfix">
+				<p>2017.02.25</p>
+			</div>
+		</header>
+
+		<section class="upperPart clearfix">
+			<div class="pic clearfix">
+				<div class="maskLayer box1 clearfix"></div>
+				<div class="maskLayer box2 clearfix"></div>
+				<img src="images/pic.png" alt="car"/>
+			</div>
+			<div class="textpart clearfix">
+				<h2><u>The Grand Tour</u></h2>
+				<p>The grand tour 节目，对三辆超跑进行了试驾和圈速测试。这三辆车分别是：</p>
+				<ul>
+					<li>Porsche 918</li>
+					<li>Ferrari Laferrari</li>
+					<li>Mclaren P1</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="middlePart clearfix">
+			<div class="porsche box clearfix">
+				<h3><u>保时捷 918</u></h3>
+				<ul>
+					<li>马力：887bhp</li>
+					<li>重量：1640kg</li>
+					<li>发动机：4.6L V8</li>
+					<li>驱动：四驱</li>
+				</ul>
+			</div>
+			<div class="ferrari box clearfix">
+				<h3><u>法拉利 Laferrari</u></h3>
+				<ul>
+					<li>马力：950bhp</li>
+					<li>重量：1255kg</li>
+					<li>发动机：6.3L V12</li>
+					<li>驱动：后驱</li>
+				</ul>
+			</div>
+			<div class="mclaren box clearfix">
+				<h3><u>迈凯伦 P1</u></h3>
+				<ul>
+					<li>马力：904bhp</li>
+					<li>重量：1395kg</li>
+					<li>发动机：3.8T V8</li>
+					<li>驱动：后驱</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="lowerPart">
+			<div class="lowerLeftPart">
+				<h2><span>THE</span> GRAND TOUR</h2>
+				<h3>伟大的旅程简介</h3>
+				<span class="firstfont">曾</span>
+				<p>
+					经，BBC出品的Top Gear作为世界上最好的汽车节目，一度吸引了全世界众多的观众，然而后来，三名主持人之一的Jeremy Clarkson因与制片人发生肢体冲突并辱骂BBC管理层被解雇，Richard Hammond和James May也相继离职。
+				</p>
+				<img src="images/logo.png" alt="图片"/>
+				<p>
+					离职后，三人与亚马逊Prime签约，开录新节目。新的节目现在终于有了一个正式的名字—“The Grand Tour”，且将于今年秋季面向亚马逊Prime服务订阅用户开播。The Grand Tour定位一档环游世界的汽车娱乐节目，The Grand Tour有豪华大旅行的意思，缩写GT也代表着高性能跑车，节目名称也是相当贴合这档节目的定位。亚马逊预计将为新节目投入2.5亿美金，共计3年36集，平均每集制作成本约为700万美金，这将会是亚马逊有史以来投资最大的剧集节目。
+				</p>
+				<p>
+					第一季有十二集，已全部更新完毕。从2016年11月18日开始至2017年2月3日连续十二周在每周五播出。（第七集下部在周六播出）
+				</p>
+				<p>
+					第二季播出时间未定，但在第一季结尾杰瑞米·克拉克森说“We will see you later of the year.”（我们会在今年晚些时候见到你们。）
+				</p>
+				<p>
+					克拉克森，哈蒙德和梅推出他们的新节目，一部短片中克拉克森在广播宣布他被BBC解雇声中离开阴雨连绵的伦敦飞往阳光灿烂的美国洛杉矶，在那里他会见了哈蒙德和梅。在温室花朵乐队演奏《我可以清楚地看到》的歌声中三辆福特野马通过加利福尼亚沙漠前往Rabbit Dry Lake，并与一队汽车及百年灵飞行表演队同行。无人机被枪“击落”。
+				</p>
+				<p>
+					在舞台介绍后，他们进入帐篷欢迎观众，并介绍了帐篷，介绍后克拉克森，哈蒙德和梅在葡萄牙阿尔加维国际赛道测试三辆超级跑车；迈凯轮P1，保时捷918和法拉利的LaFerrari。后来，克拉克森用法拉利488和宝马M2介绍了节目的新赛道”eboladrome”（埃博拉赛道，因赛道形似埃博拉病毒而得名）。在”明星碰碰脑”（<i>Celebrity Brain Crash</i>)中杰瑞米·雷纳，艾米·汉莫和卡罗尔·沃德曼成为嘉宾，但全部都“出现意外”。
+				</p>
+				<p>
+					回到葡萄牙，Jérôme d'Ambrosio在测试三辆超级跑车并计时。克拉克森跟哈蒙德和梅打赌，他的迈凯轮P1肯定最快，否则哈蒙德和梅可以拆除他的房子。但最后宣布时哈蒙德的保时捷918成为了赢家，这使哈蒙德和梅宣布他们将拆除克拉克森的房子。
+				</p>
+				
+			</div>
+			<div class="lowerRightPart">
+				<div class="intd">
+					<span class="shu"></span>
+					<span class="lap">圈速展示</span>
+					<span class="exl">埃博拉赛道测试圈速</span>
+				</div>
+				<img src="images/lap.png" alt="圈速"/>
+				<ul>
+					<li><span class="triangle"></span>保时捷 918 圈速--------------------------<i>1:54.2</i></li>
+					<li><span class="triangle"></span>法拉利 Laferrari 圈速--------------------<i>1:54.4</i></li>
+					<li><span class="triangle"></span>迈凯伦 P1 圈速---------------------------<i>1:55.5</i></li>
+				</ul>
+				<div class="copyright">
+					<span class="sum">6</span><span class="shu1"></span>
+					<span class="author">作者：syen&copy;</span>
+				</div>
+			</div>
+		</section>
+		
+
+		<footer class="footer">
+			<span>The Grand Tour</span>
+		</footer>
+	</div>
+</div>
+</body>
+</html>

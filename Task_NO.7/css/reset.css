@@ -1,0 +1,27 @@
+
+body, div, ul, li, p, header, section, footer, dl, dt, dd, h1, h2, h3, h4, h5, h6, input, form, a, textarea {
+	margin: 0;
+	padding: 0;
+	font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
+}
+ol ul li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	display: block;
+}
+img {
+	display: block;
+	border: none;
+}
+.clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}

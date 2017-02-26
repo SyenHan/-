@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>三栏式布局之流体布局</title>
+	<style>
+	/*----reset----*/
+	body, div, p, img {
+	 	margin: 0;
+	 	padding: 0;
+	}
+	ol ul li {
+		list-style: none;
+	}
+	a {
+		text-decoration: none;
+		display: block;
+	}
+	img {
+		display: block;
+		border: none;
+		max-width: 80px;
+		max-height: 80px;
+		padding: 20px 20px 0 20px;
+	}
+	.clearfix {
+		zoom: 1;
+	}
+	.clearfix:after {
+		display: block;
+		clear: both;
+		content: "";
+		visibility: hidden;
+		height: 0;
+	}
+	/*----view----*/
+	.view {
+		width: 982px;
+		height: auto;
+		margin: 0 auto;
+		padding: 20px;
+		background: #eee;
+		border: 1px solid #999;
+	}
+	.left {
+	    float: left;
+	    height: 120px;
+	    width: 200px;
+	    background: #fff;
+	    border: 1px solid #999;
+	}
+	.left img {
+		float: left;
+	}
+	.left p {
+		padding-top: 60px;
+		font-size: 16px;
+		font-family: 'Heiti SC';
+	}
+	.right {
+		float: right;
+		position: relative;
+	    width: 120px;
+	    height: auto;
+	    background: #fff;
+	    border: 1px solid #999;
+	}
+	.right img:last-child {
+		padding-bottom: 20px;
+	}
+	.main {
+	    margin-left: 220px;
+	    margin-right: 140px;
+	    width: auto;
+	    height: 380px;
+	    border: 1px solid #999;
+	}
+	article {
+		padding: 20px;
+	}
+	.main h2 {
+		font-size: 30px;
+		color: #11456b;
+		font-style: bold;
+		font-family: 'Heiti SC';
+		border-bottom: 2px solid #11456b;
+	}
+	.main p {
+		font-size: 16px;
+		text-indent: 2em;
+		line-height: 16px;
+		color: #767777;
+		font-family: 'SimSun';
+	}
+    </style>
+</head>
+<body>
+	<div class="view clearfix">
+        <div class="left clearfix">
+        	<img src="history.png" alt="mj">
+        	<p>HIStory</p>
+        </div>
+        <div class="right clearfix">
+        	<img src="history.png" alt="mj">
+        	<img src="history.png" alt="mj">
+        	<img src="history.png" alt="mj">
+        	<img src="history.png" alt="mj">
+        	<img src="history.png" alt="mj">
+        </div>
+        <div class="main clearfix">
+        	<article>
+        	<h2>History-1995</h2>
+        	<p>
+        		《History》为Michael Jackson成年后正式发行的第五张个人专辑，共两辑，第一辑为以往专辑中的超级金曲，第二辑为新曲。此专辑的音乐超强震撼，再一次证明了歌王的地位无人能及。
+        	</p>
+        	<p>
+        		《HIStory》于95年6月发行，并拥有有史以来规模最大、耗资最多的宣传活动。尽管指控撤消，公众对Michael 93年被控告儿童性骚扰的事件仍然耿耿于怀，Michael Jackson面临的道路仍然曲折。评论界对《HIStory》的发行褒贬不一，而Michael则完全陷入遭受媒体攻击的境地。因为他为了宣传新专辑将自己的巨型雕像竖立在欧洲大陆上并将它们漂流过泰晤士河。除去负面报道，人人都知道Michael Jackson的新专辑问世了。但另一个问题是：由于是双碟装，唱片的价格自然有所上涨。但Sony音乐公司受利益驱使把价格定得比其他任何双碟装唱片都高。
+        	</p>
+        	<p>
+        		尽管受到了单曲“Scream”销量失败的相关影响, 专辑《HIStory》起初的销量势头迅猛。它在世界各地的专辑榜上空降为冠军。在美国，首周便以391,000张打破《Dangerous》的首周326,500张的销售记录。在英国，仅在头2天就售出100,000张，成为英国历史上销售最快的专辑。
+        	</p>
+        	</article>
+        </div>
+    </div>
+</body>
+</html>

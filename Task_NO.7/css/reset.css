@@ -1,19 +1,24 @@
 
-body, div, ul, li, p, header, section, footer, dl, dt, dd, h1, h2, h3, h4, h5, h6, input, form, a, textarea {
+body, div, ul, li, p, span,img, header,article, section, footer, dl, dt, dd, 
+h1, h2, h3, h4, h5, h6, input, form, a, textarea {
 	margin: 0;
 	padding: 0;
 	font-family: "Helvetica Neue",Helvetica, Arial, sans-serif;
 }
-ol ul li {
+ol, ul, li {
 	list-style: none;
 }
 a {
 	text-decoration: none;
 	display: block;
+	color: #fff;
 }
 img {
 	display: block;
 	border: none;
+}
+span {
+	display: block;
 }
 .clearfix {
 	zoom: 1;

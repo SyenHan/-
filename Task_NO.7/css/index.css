@@ -1,0 +1,47 @@
+
+/*----Advertising----*/
+.ad {
+	width: auto;
+	height: 690px;
+	background: url(../images/pic1.png) no-repeat;
+	background-size: 1280px 690px;
+}
+.mask {
+	width: auto;
+	height: 690px;
+	background: linear-gradient(rgba(0, 0, 0, 0.3), 
+		rgba(0, 0, 0, 0.3)) no-repeat;
+
+}
+.mask span {
+	padding-top: 230px;
+	padding-left: 120px;
+	font-size: 60px;
+	font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.mask p {
+	padding: 10px 0 0 120px;
+	font-size: 21px;
+	font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+	color: #fff;
+}
+.mask a {
+	text-align: center;
+	width: 330px;
+	height: 42px;
+	margin: 70px 0 0 120px;
+	padding: 10px 0;
+	font-size: 30px;
+	font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+	color: #fff;
+	background: #e7504d;
+}
+/*--------*/
+/*--------*/
+/*--------*/
+/*--------*/
+/*--------*/
+/*--------*/
+/*--------*/
+/*--------*/

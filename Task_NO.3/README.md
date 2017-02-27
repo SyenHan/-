@@ -248,6 +248,7 @@ BFC 规则有这样的描述：BFC 区域，不会与浮动元素重叠。因此
 ####参考资料
 + [一个完整的Flexbox指南](http://www.w3cplus.com/css3/a-guide-to-flexbox-new.html)
 + [CSS 伸缩盒布局模组](https://www.w3.org/html/ig/zh/css-flex-1/#flex-flow)
++ [flexbox](http://www.w3cplus.com/blog/tags/157.html)
 
 #### 6. TABLE 布局
 

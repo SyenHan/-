@@ -23,3 +23,325 @@
 + [MDN HTML入门](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Introduction)
 + [MDN CSS入门教程](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started)
 + [百度面试题--盒子凸起一个角效果实现的讨论](http://blog.csdn.net/u014267351/article/details/48374373)
+
+
+
+####箭头实现
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css制作空心的上下左右的箭头</title>
+    <style type="text/css">
+        *{
+            padding:0;
+            margin:0;
+        }
+        .box{
+            width:100px;
+            height:500px;
+            margin:0 auto;
+            border:1px solid red;
+            background:white;
+        }
+        .arrow-box{
+            width:30px;
+            height:30px;
+            margin:20px auto;
+            position:relative;
+        }
+        /*右箭头*/
+        .right{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            border:1px solid blue;
+        }
+        .right-arrow1,.right-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            border-top:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-bottom:10px transparent dashed;
+            border-left:10px white solid;
+            overflow:hidden;
+        }
+        .right-arrow1{
+            left:1px;/*重要*/
+            border-left:10px blue solid;
+        }
+        .right-arrow2{
+            border-left:10px white solid;
+        }
+        /*左箭头*/
+        .left{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid blue;
+        }
+        .left-arrow1,.left-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:5;/*兼容ie8-*/
+            border-top:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-bottom:10px transparent dashed;
+            border-right:10px white solid;
+            overflow:hidden;
+        }
+        .left-arrow1{
+            border-right:10px blue solid;
+        }
+        .left-arrow2{
+            left:1px;/*重要*/
+            border-right:10px white solid;
+        }
+        /*上箭头*/
+        .top{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid blue;
+        }
+        .top-arrow1,.top-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 5;/*兼容ie8-*/
+            border-top:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-bottom:10px white solid;
+            overflow:hidden;
+        }
+        .top-arrow1{
+            border-bottom:10px blue solid;
+        }
+        .top-arrow2{
+            top:1px;/*重要*/
+            border-bottom:10px white solid;
+        }
+        /*下箭头*/
+        .bottom{
+            width:20px;
+            height:20px;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 2;/*兼容ie8-*/
+            border:1px solid blue;
+        }
+        .bottom-arrow1,.bottom-arrow2{
+            width:0;
+            height:0;
+            display:block;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index: 5;/*兼容ie8-*/
+            border-bottom:10px transparent dashed;
+            border-left:10px transparent dashed;
+            border-right:10px transparent dashed;
+            border-top:10px white solid;
+            overflow:hidden;
+        }
+        .bottom-arrow1{
+            top:1px;/*重要*/
+            border-top:10px blue solid;
+        }
+        .bottom-arrow2{
+            border-top:10px white solid;
+        }
+    </style>
+
+<body>
+<div class="box">
+    <p> 右箭头</p>
+    <div class="arrow-right arrow-box">
+        <b class="right"><i class="right-arrow1"></i><i class="right-arrow2"></i></b>
+    </div>
+    <p> 左箭头</p>
+    <div class="arrow-left arrow-box" >
+        <b class="left"><i class="left-arrow1"></i><i class="left-arrow2"></i></b>
+    </div>
+    <p> 上箭头</p>
+    <div class="arrow-top arrow-box" >
+        <b class="top"><i class="top-arrow1"></i><i class="top-arrow2"></i></b>
+    </div>
+    <p> 下箭头</p>
+    <div class="arrow-bottom arrow-box" >
+        <b class="bottom"><i class="bottom-arrow1"></i><i class="bottom-arrow2"></i></b>
+    </div>
+</div>
+</body>
+</html>
+```
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+.arrow {
+width: 20px;
+height: 4px;
+margin: 0 auto 7px;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-bottom: 4px solid #343c99;
+transform: rotate(45deg);
+transform-origin: left;
+}.arrow:after {
+content: '';
+display: block;
+width: 100%;
+height: 100%;
+border-left: 4px solid transparent;
+border-right: 4px solid transparent;
+border-top: 4px solid #343c99;
+position: absolute;
+right: -10px;
+top: -14px;
+transform: rotate(90deg);
+transform-origin: bottom;
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+```
+第二种写法相对于比较简单
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+/*简单*/
+.wb_arrow{
+border-right: 2px solid #343c99;
+border-top: 2px solid #343c99;
+height: 10px;
+width: 10px;
+margin:50px auto 0;
+transform: rotate(deg);
+-webkit-transform: rotate(0deg);
+/*不加这两个属性三角会比上一个略丑, 大家可以试一下*/
+border-left: 2px solid transparent;
+border-bottom: 2px solid transparent;
+}
+</style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
+```
+
+```
+.test {
+    position: relative;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+}
+.test:after {
+    position: absolute;
+    right: 15px;
+    top: 18px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+    -webkit-transition: all .25s;
+       -moz-transition: all .25s;
+        -ms-transition: all .25s;
+         -o-transition: all .25s;
+            transition: all .25s;
+}
+
+.test:before {
+    position: absolute;
+    right: 13px;
+    top: 18px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-width: 8px 8px 0 8px;
+    border-style: solid;
+    border-color: #d36969 transparent;
+    -webkit-transition: transform .25s;
+       -moz-transition: transform .25s;
+        -ms-transition: transform .25s;
+         -o-transition: transform .25s;
+            transition: transform .25s;
+}
+.test.active:after{       
+    top: 20px;
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg); 
+}
+.test.active:before{
+    -webkit-transform: rotate(180deg);
+       -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+         -o-transform: rotate(180deg);
+            transform: rotate(180deg);        
+}
+```
+
+####照片旁白色三角
+```
+.triangle {
+	width: 2px;
+    height: auto;
+    position: relative;
+	/*三角只出现在右侧，采用div翻转的方式*/
+    -moz-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.triangle:before{
+	content: "";
+  	position: absolute;
+  	top: 280px;
+  	width: 0px;
+  	height: 0px;
+  	border: 20px solid transparent;
+  	border-left-color: #fff;
+}
+```

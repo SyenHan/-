@@ -96,11 +96,11 @@
 	border: none;
 }
 .emailform input[type="email"] {
-	width: 432px;
+	width: 442px;
 	height: 42px;
 }
 .emailform input[type="button"] {
-	width: 80px;
+	width: 90px;
 	height: 42px;
 	background: #6f7278;
 	font-size: 15px;
@@ -109,7 +109,7 @@
 	color: #fff;
 }
 .emailform input[value] {
-	padding-left: 10px;
+	text-indent: 6pt;
 	color: #aaa;
 	font-size: 14px;
 	font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;

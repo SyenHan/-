@@ -45,7 +45,7 @@
 }
 .nav a:hover {
 	color: #e74f4d;
-	border-bottom: 1px solid #e74f4d;
+	border-bottom: 2px solid #e74f4d;
 }
 .nav img {
 	float: left;
